@@ -29,7 +29,7 @@
 					<li><span class="glyphicon glyphicon-time"></span> <?php the_time('Y-m-d') ?></li>
                     <li><span class="glyphicon glyphicon-folder-open"></span> <?php the_category(', ') ?></li>
 					<li><span class="glyphicon glyphicon-fire"></span> <?php lmsim_theme_views(); ?></li>
-					<li><?php comments_popup_link('<span class="glyphicon glyphicon-comment"></span> 0', '<span class="glyphicon glyphicon-comment"></span> 1', '<span class="glyphicon glyphicon-comment"></span> %', '', '<span class="glyphicon glyphicon-comment"></span> Comment Closed'); ?></li>
+					<li><?php comments_popup_link('<span class="glyphicon glyphicon-comment"></span> 0', '<span class="glyphicon glyphicon-comment"></span> 1', '<span class="glyphicon glyphicon-comment"></span> %', '', '<span class="glyphicon glyphicon-comment"></span> 评论已关闭'); ?></li>
 					<?php edit_post_link(__('Edit','lmsim'),'<li>','</li>'); ?>
 					<li class="pull-right hidden-xs">
 						<a href="<?php the_permalink() ?>" rel="bookmark">阅读全文</a>
