@@ -1,0 +1,132 @@
+/*
+Theme Name: Happyet
+Theme URI: http://lms.im/theme/happyet-v2
+Description: Personal Blog Theme base on bootstrap. 
+Version: 2.5
+Author: LMS
+Author URI: http://lms.im/
+Tags: one-column, two-columns, right-sidebar, custom-menu, featured-images, sticky-post, threaded-comments
+Text Domain: lmsim
+
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+body{font-family: "Microsoft JhengHei","Microsoft Yahei";color: #888;}
+a{color: red}
+a:hover{color: red;text-decoration: none;}
+img{max-width:100%;height: auto;}
+blockquote{font-size: 14px;color: #777;}
+.aligncenter,.wp-embedded-content{display: block;margin-left: auto;margin-right: auto}
+.alignleft{float: left}
+.alignright{float: right}
+.wp-caption-text{text-align: center !important;color: #999}
+.screen-reader-text{display: none;visibility: hidden;}
+
+#header{height: 60px;border-bottom: 1px solid #ccc;}
+.navbar-brand h1{margin: 0;font-size: 24px;font-weight: normal;}
+.navbar-brand .description{display: none}
+.navbar-brand a,.nav-default .navbar-nav>li>a{color: #333;}
+.nav-default .navbar-toggle{margin-top: 10px;border-color: #ccc;}
+.navbar-toggle .icon-bar{background-color: #ccc;}
+.navbar-collapse.in{position: relative;margin-top: 10px;background-color: #fff;z-index: 100}
+.nav li.active>a{background-color: red;color: #fff;border-radius: 4px;}
+
+#content{padding-bottom: 15px;}
+.post{margin-bottom: 15px;border-bottom: 1px solid #eaeaea}
+h2.title{position: relative;font-size: 20px;margin: 20px 0 15px;}
+h2.title:before{position: absolute;display: block;content: '';left: 0;top: -12px;height: 2px;width: 35px;background-color: red;}
+h2.title a{color: #333;}
+h2.title a:hover{color: red}
+.singlepost{overflow: hidden}
+.singlepost h2.title{font-size: 24px;color: #333}
+
+.post-meta{font-size: 12px;color: #999;margin-top: 20px;margin-bottom: 25px;}
+.post-meta span{padding-right: 3px;}
+.post-meta a{color: #999;}
+.post-meta a:hover{color: red;}
+.sticky .post-meta li:first-child{color: red;}
+
+.excerpt p{text-align: justify;margin-bottom: 15px;}
+.excerpt p.text-center{text-align: center}
+.entry{color: #555;}
+.entry p{text-align: justify;margin-bottom: 20px;line-height: 1.8}
+.entry h2,.entry h3,.entry h4,.entry h5{margin: 25px 0 20px;padding-bottom: 10px;border-bottom: 1px solid #efefef;}
+.entry h2,.entry h3{font-size: 20px;}
+.entry h4,.entry h5{font-size: 16px;}
+.entry ul,.entry ol{color: #777}
+
+.post-footer{margin-top: 40px}
+.post-footer,.post-footer a{color: #777}
+.post-footer .tags span{font-size: 12px;padding: 0 3px;color: #999}
+.post-footer .media a.author-link,.post-footer img.avatar{display: block;width: 50px;height: 50px;}
+.post-footer img.avatar{box-shadow: 4px 4px 0 #eee}
+
+.comments-area{padding-bottom: 20px;overflow: hidden}
+.comments-area h2.comments-title,.comment-reply-title{font-size: 20px;color: #555}
+.comments-area ol{list-style: none;padding: 0}
+.comments-area li.depth-1{margin-top: 30px;}
+.comments-area li.depth-1 > ol{margin-left: 59px}
+.comments-area li.depth-1 li{margin-top: 20px;}
+.comment-body{position: relative;padding-left: 59px;}
+.comment-author,.comment-meta,.comment-meta a{color: #aaa;}
+.comment-author img.avatar{position: absolute;left: 0;border: 1px solid #eee;box-shadow: 4px 4px 0 #eee;}
+.bypostauthor > .comment-body .comment-author img.avatar{box-shadow: 4px 4px 0 #ccc;}
+.comment-author .fn,.comment-author .fn a{font-style: normal;color: #333;padding-right: 3px;}
+.comment-body p{margin: 10px 0;line-height: 24px;color: #555;}
+.comment-form .logged-in-as a{color: #777}
+.comment-form .logged-in-as a:hover{color: red}
+.comment-navigation{overflow: hidden;}
+.comment-navigation .nav-previous{float: left}
+.comment-navigation .nav-next{float: right;}
+
+.page-title{font-size: 18px;margin-top: 25px;margin-bottom: 5px;}
+.page-title span{margin-right: 5px;}
+.taxonomy-description{color: #999;}
+
+.gallery-caption{color: #999;display: block;font-size: 12px;text-align: center;}
+
+.gallery-columns-6 .gallery-caption,
+.gallery-columns-7 .gallery-caption,
+.gallery-columns-8 .gallery-caption,
+.gallery-columns-9 .gallery-caption {
+	display: none;
+}
+#searchform .form-group,#searchform .input-group{width: 100%}
+#searchform .input-group-addon{position: relative;width: 12%;text-align: center;}
+#searchform .submit{position: absolute;width: 100%;top: 0;left: 0;right: 0;bottom: 0;background-color: transparent;border: none;outline: none;}
+
+#sidebar{padding-top: 20px;font-size: 13px;}
+#sidebar a{color: #777}
+#sidebar a:hover{ color: red; }
+#sidebar .side-box{margin-bottom: 20px;padding-bottom: 20px;border-bottom: 1px solid #eee}
+.side-box h3,.comments-title,.comment-reply-title{position: relative;font-size: 16px;margin-bottom: 15px}
+.side-box h3:before,.comments-title:before,.comment-reply-title:before{position: absolute;display: block;content: '';left: 0;bottom: -6px;height: 1px;width: 20px;background-color: red;}
+
+.side-box ul{margin: 0;padding: 0;list-style: none}
+.side-box ul li{margin-bottom: 8px;}
+.side-box ul ul{margin: 0; padding:5px 20px 0;}
+.side-box ul ul li{margin-bottom: 3px;}
+.side-box .comment-author-link{padding-right: 3px;}
+.side-box table{width: 100%;max-width: 100%;}
+.side-box table th{vertical-align: bottom;border-bottom: 2px solid #ddd;padding: 8px;line-height: 1.42857143;}
+.side-box table td{padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;}
+.side-box tbody a{text-decoration: underline;font-weight: bold;}
+.side-box td#next{text-align: right;}
+
+#footer{padding: 40px 0;text-align: center;border-top: 1px solid #ccc;background: #31353a; color:#777;}
+#footer a{color:#999;}
+#footer a:hover{color:red;}
+
+@media (min-width: 768px) {
+	body{background: #EFEFEF url("static/img/misc.png") repeat;}
+	.wrapper{margin-top: 25px;margin-bottom: 25px;background-color: #fff;box-shadow: 0 1px 5px rgba(0,0,0,.15)}
+	#header{height: 120px;padding-top: 35px}
+	.navbar>.container-fluid .navbar-brand{margin-top: -15px;margin-left: 0}
+	.navbar-brand .description{display: block;margin-top:2px; color:#ccc; font-size:14px;}
+	#content {border-right:1px solid #eaeaea;}
+	.post{margin: 40px 15px;}
+    .page-title,.taxonomy-description,.comments-area{padding-left: 15px;padding-right: 15px;}
+
+	#sidebar .side-box{padding-left: 10px;padding-right: 10px}
+}
