@@ -27,20 +27,20 @@
 					    </div>
 
 					    <div class="collapse navbar-collapse" id="main-menu">
-					      <?php 
-									if(has_nav_menu('topbar')){
-										wp_nav_menu( array(
-											'menu'              => '',
-											'theme_location'    => 'topbar',
-											'depth'             => 0,
-											'container'         => '',
-											'container_class'   => '',
-											'menu_class'        => 'nav navbar-nav navbar-right',
-											'items_wrap'     => '<ul class="%2$s">%3$s</ul>',
-											'walker'            => new lmsim_Bootstrap_Menu()
-										 )  );
-									}
-								?>
+					       <?php 
+                                if(has_nav_menu('topbar')){
+                                    wp_nav_menu( array(
+                                        'menu'              => '',
+                                        'theme_location'    => 'topbar',
+                                        'depth'             => 0,
+                                        'container'         => '',
+                                        'container_class'   => '',
+                                        'menu_class'        => 'nav navbar-nav navbar-right',
+                                        'items_wrap'     => '<ul class="%2$s">%3$s</ul>',
+                                        'walker'            => new lmsim_Bootstrap_Menu()
+                                     )  );
+				                }
+				            ?>
 					    </div>
 					  </div>
 					</nav>
