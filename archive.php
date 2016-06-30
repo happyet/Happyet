@@ -14,17 +14,17 @@
                 <h2 class="title"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h2>
                 <div class="excerpt">
                     <?php 
-						if(preg_match('/<!--more.*?-->/',$post->post_content)){
-							the_content('', TRUE);
-						}else{
-							if( has_post_thumbnail() ){
-								echo '<p class="text-center">';
-									the_post_thumbnail();
-								echo '</p>';
-							}
-							the_excerpt();
-						}
-					?>
+                        if(preg_match('/<!--more.*?-->/',$post->post_content)){
+                            the_content('', TRUE);
+                        }else{
+                            if( has_post_thumbnail() ){
+                                echo '<p class="text-center">';
+                                    the_post_thumbnail();
+                                echo '</p>';
+                            }
+                            the_excerpt();
+                        }
+                    ?>
                 </div>
                 <ul class="list-inline post-meta">
                     <li><span class="glyphicon glyphicon-time"></span>
