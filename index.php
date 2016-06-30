@@ -1,9 +1,9 @@
-<?php get_header(); ?>
-    <?php
-        $content_class = 'col-md-8';
-        if ( ! is_active_sidebar( 'sidebar-1' ) ) $content_class = 'col-md-12';
-    ?>
-	<div id="content" class="<?php echo $content_class; ?>">
+<?php
+	get_header();
+	$content_class = 'col-md-8';
+	if ( ! is_active_sidebar( 'sidebar-1' ) ) $content_class = 'col-md-12';
+?>
+<div id="content" class="<?php echo $content_class; ?>">
 	<?php if (have_posts()) : ?>
 		<?php while (have_posts()) : the_post(); ?>
 			<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -32,7 +32,7 @@
 					<li><?php comments_popup_link('<span class="glyphicon glyphicon-comment"></span> 0', '<span class="glyphicon glyphicon-comment"></span> 1', '<span class="glyphicon glyphicon-comment"></span> %', '', '<span class="glyphicon glyphicon-comment"></span> Comment Closed'); ?></li>
 					<?php edit_post_link(__('Edit','lmsim'),'<li>','</li>'); ?>
 					<li class="pull-right hidden-xs">
-						<a href="<?php the_permalink() ?>" rel="bookmark"><?php _e('Read More...','lmsim'); ?></a>
+						<a href="<?php the_permalink() ?>" rel="bookmark">阅读全文</a>
 					</li>
 				</ul>
 			</div>
@@ -60,6 +60,6 @@
 		</div>
 
 	<?php endif; ?>
-	</div>
+</div>
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
