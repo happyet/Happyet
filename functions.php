@@ -14,6 +14,7 @@ add_action( 'widgets_init', 'happyet_widgets_init' );
 function happyet_load() {
     add_editor_style();
 	add_theme_support( 'title-tag' );
+    //add_theme_support( 'custom-background' );
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'post-thumbnails' );
 	register_nav_menus( array(
@@ -24,7 +25,7 @@ function happyet_load() {
 add_action( 'after_setup_theme', 'happyet_load' );
 
 function add_scripts() {
-	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/static/css/bootstrap.min.css','','3.3.6','screen' );
+	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/static/css/bootstrap.min.css','','3.3.6','all' );
 	wp_enqueue_style( 'happyet', get_stylesheet_uri() );
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/static/js/bootstrap.min.js',array('jquery'),'3.3.6',true);
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' );
@@ -126,7 +127,7 @@ function par_pagenavi($range = 8){
             }
         }
     	if($max_page > 5 && $paged < $max_page -2){
-            echo '<li class="disabled"><span>...</span></li><li><a href="' . get_pagenum_link($max_page) . '" class="extend" title="' . _e('Last Page','lmsim') . '">' . $max_page . '</a></li>';
+            echo '<li class="disabled"><span>...</span></li><li><a href="' . get_pagenum_link($max_page) . '" class="extend">' . $max_page . '</a></li>';
         }
         if(get_next_posts_link()){
             echo '<li>';
@@ -135,18 +136,8 @@ function par_pagenavi($range = 8){
         }
     }
 }
-function lmsim_body_classes( $classes ) {
-	if ( get_background_image() ) {
-		$classes[] = 'custom-background';
-	}
-	if ( ! is_active_sidebar( 'sidebar-1' ) ) {
-		$classes[] = 'no-sidebar';
-	}
-	return $classes;
-}
-add_filter( 'body_class', 'lmsim_body_classes' );
-function get_ssl_avatar($avatar) {
+function get_cn_avatar($avatar) {
     $avatar = str_replace(array("www.gravatar.com", "0.gravatar.com", "1.gravatar.com", "2.gravatar.com"), "cn.gravatar.com", $avatar);
     return $avatar;
 }
-add_filter('get_avatar', 'get_ssl_avatar');
+add_filter('get_avatar', 'get_cn_avatar');

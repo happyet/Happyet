@@ -113,20 +113,8 @@ blockquote {
 }
 
 h2.title {
-    position: relative;
     font-size: 20px;
     margin: 20px 0 15px;
-}
-
-h2.title:before {
-    position: absolute;
-    display: block;
-    content: '';
-    left: 0;
-    top: -12px;
-    height: 2px;
-    width: 35px;
-    background-color: red;
 }
 
 h2.title a {
