@@ -39,7 +39,6 @@
                         </li>
                         <li>
                             <?php comments_popup_link('<span class="glyphicon glyphicon-comment"></span> 0', '<span class="glyphicon glyphicon-comment"></span> 1', '<span class="glyphicon glyphicon-comment"></span> %', '', '<span class="glyphicon glyphicon-comment"></span> 评论已关闭'); ?></li>
-                        <?php edit_post_link(__('Edit','lmsim'),'<li>','</li>'); ?>
                         <li class="pull-right hidden-xs">
                             <a href="<?php the_permalink() ?>" rel="bookmark">阅读全文</a>
                         </li>

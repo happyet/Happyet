@@ -1,9 +1,10 @@
 <?php
+add_filter( 'pre_option_link_manager_enabled', '__return_true' );
 require get_template_directory() . '/inc/bootstrap_navwalker.class.php';
-if ( ! isset( $content_width ) ) $content_width = 900;
 function happyet_widgets_init() {
     register_sidebar(array(
     	'id' => 'sidebar-1',
+        'name' => 'Widget Area',
         'before_widget' => '<div class="side-box %2$s">',
         'after_widget' => '</div>',
         'before_title' => '<h3 class="widgettitle">',
@@ -12,15 +13,14 @@ function happyet_widgets_init() {
 }
 add_action( 'widgets_init', 'happyet_widgets_init' );
 function happyet_load() {
-    add_editor_style();
+    register_nav_menus( array(
+		'topbar' => 'Main Menu',
+		'mbar' => 'Mobile Menu'
+	) );
 	add_theme_support( 'title-tag' );
-    //add_theme_support( 'custom-background' );
+    add_theme_support( 'custom-background' );
 	add_theme_support( 'automatic-feed-links' );
-	add_theme_support( 'post-thumbnails' );
-	register_nav_menus( array(
-		'topbar' => __('Main Menu','lmsim'),
-		'mbar' => __('Mobile Menu','lmsim')
-	) );		
+	add_theme_support( 'post-thumbnails' );	
 }
 add_action( 'after_setup_theme', 'happyet_load' );
 
@@ -79,10 +79,6 @@ function lmsim_auto_excerpt_more( $more ) {
 		return ' &hellip;';
 }
 add_filter( 'excerpt_more', 'lmsim_auto_excerpt_more' );
-function lmsim_more_link($more_link, $more_link_text) {
-	return str_replace($more_link_text, 'Keep reading this post', $more_link);
-}
-add_filter('the_content_more_link', 'my_more_link', 10, 2);
 
 function par_pagenavi($range = 8){
 	global $paged,$max_page,$wp_query;
