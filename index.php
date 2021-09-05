@@ -1,14 +1,14 @@
 <?php 
     get_header();
-    $content_class = 'col-md-8';
-    if ( ! is_active_sidebar( 'sidebar-1' ) ) $content_class = 'col-md-12';
+    $content_class = 'col-lg-8';
+    if ( ! is_active_sidebar( 'sidebar-1' ) ) $content_class = 'col-lg-12';
 ?>
     <div id="content" class="<?php echo $content_class; ?>">
         <?php if (have_posts()) : ?>
             <?php while (have_posts()) : the_post(); ?>
-                <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                    <h2 class="title"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h2>
-                    <div class="excerpt">
+                <div id="post-<?php the_ID(); ?>" class="post my-4 pb-4">
+                    <h2 class="title line-title pt-2"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+                    <div class="excerpt py-3">
                         <?php 
                             if(preg_match('/<!--more.*?-->/',$post->post_content)){
                                 the_content('', TRUE);
@@ -22,41 +22,41 @@
                             }
                         ?>
                     </div>
-                    <ul class="list-inline post-meta">
+                    <ul class="list-inline post-meta small">
                         <?php if ( is_sticky() ) : ?>
-                            <li><span class="glyphicon glyphicon-bookmark"></span>
-                                <?php _e( 'Featured','lmsim' ); ?>
+                            <li class="list-inline-item me-3">
+                            <span class="sticky">推荐</span>
                             </li>
                         <?php endif; ?>
-                        <li><span class="glyphicon glyphicon-time"></span>
+                        <li class="list-inline-item me-3">
                             <?php the_time('Y-m-d') ?>
                         </li>
-                        <li><span class="glyphicon glyphicon-folder-open"></span>
+                        <li class="list-inline-item me-3">
                             <?php the_category(', ') ?>
                         </li>
-                        <li><span class="glyphicon glyphicon-fire"></span>
+                        <li class="list-inline-item me-3"><i class="iconfont icon-browse"></i>
                             <?php lmsim_theme_views(); ?>
                         </li>
-                        <li>
-                            <?php comments_popup_link('<span class="glyphicon glyphicon-comment"></span> 0', '<span class="glyphicon glyphicon-comment"></span> 1', '<span class="glyphicon glyphicon-comment"></span> %', '', '<span class="glyphicon glyphicon-comment"></span> 评论已关闭'); ?></li>
-                        <li class="pull-right hidden-xs">
-                            <a href="<?php the_permalink() ?>" rel="bookmark">阅读全文</a>
+                        <li class="list-inline-item me-3">
+                            <?php comments_popup_link('<i class="iconfont icon-chat"></i> 0', '<i class="iconfont icon-chat"></i> 1', '<i class="iconfont icon-chat"></i> %', '', '<i class="iconfont icon-chat"></i> 评论已关闭'); ?></li>
+                        <li class="float-end d-lg-block d-none">
+                            <a href="<?php the_permalink() ?>" rel="bookmark">...阅读全文</a>
                         </li>
                     </ul>
                 </div>
             <?php endwhile; ?>
             <nav class="text-center">
                 <?php if(!wp_is_mobile() && (get_previous_posts_link() || get_next_posts_link())){ ?>
-                    <ul class="pagination">
+                    <ul class="pagination my-4">
                         <?php par_pagenavi(2); ?>
                     </ul>
                 <?php }else{ ?>
-                    <ul class="pager">
+                    <ul class="pager my-4 d-flex">
                         <li class="previous">
-                            <?php next_posts_link( '<span class="meta-nav">&larr;</span> Older posts' ); ?>
+                            <?php next_posts_link( '<i class="iconfont icon-arrow-left-bold"></i>' ); ?>
                         </li>
                         <li class="next">
-                            <?php previous_posts_link( 'Newer posts <span class="meta-nav">&rarr;</span>' ); ?>
+                            <?php previous_posts_link( '<i class="iconfont icon-arrow-right-bold"></i>' ); ?>
                         </li>
                     </ul>
                 <?php } ?>

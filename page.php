@@ -1,25 +1,24 @@
 <?php
     get_header();
-    $content_class = 'col-md-8';
-    if ( ! is_active_sidebar( 'sidebar-1' ) ) $content_class = 'col-md-12';
+    $content_class = 'col-lg-8';
+    if ( ! is_active_sidebar( 'sidebar-1' ) ) $content_class = 'col-12';
 ?>
 <div id="content" class="<?php echo $content_class; ?>">
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-        <div id="post-<?php the_ID(); ?>" <?php post_class( 'singlepost'); ?>>
-            <h2 class="title"><?php the_title(); ?></h2>
-            <ul class="list-inline post-meta">
-                <li><span class="glyphicon glyphicon-time"></span>
-                    <?php the_time('Y-m-d') ?>
-                </li>
-                <li><span class="glyphicon glyphicon-fire"></span>
-                    <?php lmsim_theme_views(); ?>
-                </li>
-                <?php edit_post_link(__('Edit','lmsim'),'<li>','</li>'); ?>
-                <li class="pull-right">
-                    <?php comments_popup_link('<span class="glyphicon glyphicon-comment"></span> 0', '<span class="glyphicon glyphicon-comment"></span> 1', '<span class="glyphicon glyphicon-comment"></span> %', '', '<span class="glyphicon glyphicon-comment"></span> 评论已关闭'); ?>
-                </li>
-            </ul>
-            <div class="entry">
+        <div class="post singlepost my-4 pb-4">
+        <h2 class="title line-title pt-2 mb-2"><?php the_title(); ?></h2>
+            <ul class="list-inline post-meta small">
+                        <li class="list-inline-item me-3">
+                            <?php the_time('Y-m-d') ?>
+                        </li>
+                        <li class="list-inline-item me-3"><i class="iconfont icon-browse"></i>
+                            <?php lmsim_theme_views(); ?>
+                        </li>
+                        <li class="float-end">
+                            <?php comments_popup_link('<i class="iconfont icon-chat"></i> 0', '<i class="iconfont icon-chat"></i> 1', '<i class="iconfont icon-chat"></i> %', '', '<i class="iconfont icon-chat"></i> 评论已关闭'); ?>
+                        </li>
+                    </ul>
+            <div class="entry py-3">
                 <?php 
                     the_content();
                     wp_link_pages( array(

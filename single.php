@@ -1,32 +1,31 @@
 <?php
     get_header();
-    $content_class = 'col-md-8';
-    if ( ! is_active_sidebar( 'sidebar-1' ) ) $content_class = 'col-md-12';
+    $content_class = 'col-lg-8';
+    if ( ! is_active_sidebar( 'sidebar-1' ) ) $content_class = 'col-lg-12';
 ?>
 <div id="content" class="<?php echo $content_class; ?>">
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-        <div class="post singlepost">
-            <h2 class="title"><?php the_title(); ?></h2>
-            <ul class="list-inline post-meta">
-                <li><span class="glyphicon glyphicon-time"></span>
-                    <?php the_time('Y-m-d') ?>
-                </li>
-                <li><span class="glyphicon glyphicon-folder-open"></span>
-                    <?php the_category(', ') ?>
-                </li>
-                <li><span class="glyphicon glyphicon-fire"></span>
-                    <?php lmsim_theme_views(); ?>
-                </li>
-                <?php edit_post_link(__('Edit','lmsim'),'<li>','</li>'); ?>
-                <li class="pull-right">
-                    <?php comments_popup_link('<span class="glyphicon glyphicon-comment"></span> 0', '<span class="glyphicon glyphicon-comment"></span> 1', '<span class="glyphicon glyphicon-comment"></span> %', '', '<span class="glyphicon glyphicon-comment"></span> 评论已关闭'); ?>
-                </li>
-            </ul>
-            <div class="entry">
+        <div class="post singlepost my-4 pb-4">
+            <h2 class="title line-title pt-2 mb-2"><?php the_title(); ?></h2>
+            <ul class="list-inline post-meta small">
+                        <li class="list-inline-item me-3">
+                            <?php the_time('Y-m-d') ?>
+                        </li>
+                        <li class="list-inline-item me-3">
+                            <?php the_category(', ') ?>
+                        </li>
+                        <li class="list-inline-item me-3"><i class="iconfont icon-browse"></i>
+                            <?php lmsim_theme_views(); ?>
+                        </li>
+                        <li class="float-end">
+                            <?php comments_popup_link('<i class="iconfont icon-chat"></i> 0', '<i class="iconfont icon-chat"></i> 1', '<i class="iconfont icon-chat"></i> %', '', '<i class="iconfont icon-chat"></i> 评论已关闭'); ?>
+                        </li>
+                    </ul>
+            <div class="entry py-3">
                 <?php 
                     the_content();
                     wp_link_pages( array(
-                        'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'lmsim' ) . '</span>',
+                        'before'      => '<div class="page-links">',
                         'after'       => '</div>',
                         'link_before' => '<span>',
                         'link_after'  => '</span>',
@@ -35,30 +34,21 @@
                     ) );
                 ?>
             </div>
-            <div class="panel panel-default post-footer">
-                <div class="panel-heading">
-                    <?php the_tags('<div class="pull-right tags"><span class="glyphicon glyphicon-tags"></span><span>', '</span><span>', '</span></div>'); ?> <span class="glyphicon glyphicon-user"></span> <a class="author-link" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author"><strong><?php the_author(); ?></strong></a>
-                </div>
-                <div class="panel-body">
-                    <div class="media">
-                        <div class="media-left">
-                            <a class="author-link" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author">
-                                <?php echo get_avatar( get_the_author_meta( 'user_email' ), 50 ); ?>
-                            </a>
-                        </div>
-                        <div class="media-body">
-                            <?php the_author_meta( 'description' ); ?>
-                        </div>
-                    </div>
+            <div class="post-footer">
+                <?php the_tags('<div class="tags my-3"><i class="iconfont icon-attachment"></i><span>', '</span><span>', '</span></div>'); ?> 
+                <div class="about-author text-center p-3 bg-light">
+                    <?php echo get_avatar( get_the_author_meta( 'user_email' ), 80 ); ?>
+                    <a class="author-link d-block my-1" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author"><strong><?php the_author(); ?></strong></a>
+                    <span class="d-block"><?php the_author_meta( 'description' ); ?></span>
                 </div>
             </div>
         </div>
         <nav>
-            <ul class="pager">
-                <li class="previous">
+            <ul class="page my-4 d-flex">
+                <li class="previous text-start">
                     <?php previous_post_link('%link') ?>
                 </li>
-                <li class="next">
+                <li class="next text-end">
                     <?php next_post_link('%link') ?>
                 </li>
             </ul>

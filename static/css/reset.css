@@ -1,0 +1,1154 @@
+:root {
+    --color-primary: #ff5745;
+    --color-dark: #1a1a1a;
+    --color-secondary: #494949;
+    --color-muted: rgba(0,0,0,.55);
+    --color-light: #eeeeee;
+    --color-danger: #f7094c;
+    --color-warning: #ff8338;
+    --color-body: #3d3737;
+    --btn-primary: #ff5745;
+    --btn-dark: #1a1a1a;
+    --btn-secondary: #494949;
+    --btn-danger: #f7094c;
+    --btn-light: #eceef1;
+    --btn-success: #41d589;
+    --bg-primary: #ff5745;
+    --bg-dark: #1a1a1a;
+    --bg-secondary: #494949;
+    --bg-danger: #ff625e;
+    --bg-warning: #ffe9d5;
+    --bg-light: #f6f6f7;
+    --bg-muted: #ededf1;
+    --bg-white: #fff;
+    --bg-body: #FBFBFD;
+    --border-primary: #ff5745;
+    --border-dark: #2b2a2a;
+    --border-secondary: #494949;
+    --border-danger: #f7094c;
+    --border-muted: #d4ddec;
+    --border-light: #eff3fa;
+    --border-white: #fff;
+    --btn-outline-primary: #fff0f0;
+    --btn-outline-danger: #ffe8e8;
+    --border-outline-primary: #ffd1d1;
+    --border-outline-danger: #ffe8e8;
+    --night-color-primary: #ff5745;
+    --night-color-dark: #d7d7d7;
+    --night-color-secondary: #8c8c91;
+    --night-color-muted: #8a8a8a;
+    --night-color-light: #6a6a6a;
+    --night-color-danger: #f7094c;
+    --night-color-body: #e4e4e5;
+    --night-btn-primary: #ff5745;
+    --night-btn-outline-primary: #ffd1d1;
+    --night-btn-dark: #1e1e21;
+    --night-btn-secondary: #252628;
+    --night-btn-light: #414147;
+    --night-btn-danger: #f7094c;
+    --night-btn-success: #41d589;
+    --night-bg-primary: #ff5745;
+    --night-bg-dark: #141417;
+    --night-bg-secondary: #2f3035;
+    --night-bg-light: #232327;
+    --night-bg-muted: #202023;
+    --night-bg-body: #19191d;
+    --night-bg-danger: #f7094c;
+    --night-bg-warmming: #f6d365;
+    --night-bg-white: #101012;
+    --night-border-primary: #ff5745;
+    --night-border-outline-primary: #ffd1d1;
+    --night-border-dark: #141417;
+    --night-border-secondary: #2f3035;
+    --night-border-muted: #37373c;
+    --night-border-light: #3f4041;
+    --night-border-danger: #f7094c;
+    --night-border-white: #101012;
+    --radius-xs: 3px;
+    --radius-sm: 4px;
+    --radius-md: 6px;
+    --radius-lg: 10px;
+    --shadow-xs: 0 10px 40px 5px rgb(62 61 80 / 2%);
+    --shadow-sm: 0 5px 30px 5px rgb(62 61 80 / 5%);
+    --shadow-md: 0 10px 40px 5px rgb(62 61 80 / 6%);
+    --shadow-lg: 0 10px 40px 5px rgb(62 61 80 / 10%);
+}
+
+
+/* -------------------------------------------------------------------------- */
+
+
+/*	0. CSS Reset
+/* -------------------------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+address,
+big,
+cite,
+code,
+em,
+font,
+img,
+small,
+strike,
+sub,
+sup,
+li,
+ol,
+ul,
+fieldset,
+form,
+label,
+legend,
+button,
+table,
+caption,
+tr,
+th,
+td {
+    border: none;
+    font-size: inherit;
+    line-height: inherit;
+    text-align: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+blockquote::before,
+blockquote::after {
+    content: "";
+}
+
+
+/* -------------------------------------------------------------------------- */
+
+
+/*	1. Document Setup
+/* -------------------------------------------------------------------------- */
+
+html {
+    /* font-size: 62.5%; 1rem = 10px */
+    scroll-behavior: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+body {
+    font-family: OPPOSans2, "PingFang SC", "Lantinghei SC", "Microsoft YaHei", "HanHei SC", "Helvetica Neue", "Open Sans", Arial, "Hiragino Sans GB", STHeiti, "WenQuanYi Micro Hei", SimSun, sans-serif;
+    background-color: var(--bg-body);
+    color: var(--color-body);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+/* Base Transitions -------------------------- */
+
+p {
+    line-height: inherit;
+}
+
+
+/* Accessibility Settings -------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        -webkit-animation-duration: 0s !important;
+        animation-duration: 0s !important;
+        -webkit-transition-duration: 0s !important;
+        -o-transition-duration: 0s !important;
+        transition-duration: 0s !important;
+    }
+}
+
+
+/*--------------------------------------------------------------
+## Reboot
+--------------------------------------------------------------*/
+
+a {
+    color: var(--color-body);
+    text-decoration: none;
+    -webkit-transition: color 0.25s;
+    -o-transition: color 0.25s;
+    transition: color 0.25s;
+}
+
+a:hover,
+a:active,
+a:focus,
+a:not([href]),
+a:not([href]):hover {
+    color: inherit;
+    text-decoration: none;
+}
+
+svg {
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+template {
+    display: none;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+.screen-reader-text,
+.sr-only {
+    display: none;
+}
+
+i {
+    font-style: normal;
+}
+
+em,
+q,
+dfn {
+    font-style: italic;
+}
+
+em em,
+em i,
+i em,
+i i,
+cite em,
+cite i {
+    font-weight: 500;
+}
+
+big {
+    font-size: 1.2em;
+}
+
+small {
+    font-size: 75%;
+}
+
+b,
+strong {
+    font-weight: 500;
+}
+
+ins {
+    text-decoration: underline;
+}
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+abbr,
+acronym {
+    cursor: help;
+}
+
+address {
+    line-height: 1.5;
+    margin: 0 0 2rem 0;
+}
+
+
+/* -------------------------------------------------------------------------- */
+
+
+/*	2. Element Base
+/* ---------------------------------------------*---------------------------- */
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 500;
+    margin: 0;
+}
+
+
+/*--------------------------------------------------------------
+/*	3. title Font Size style
+--------------------------------------------------------------*/
+
+h1,
+.h1,
+.heading-size-1 {
+    font-size: 2.25rem;
+    line-height: 1.4;
+}
+
+h2,
+.h2,
+.heading-size-2 {
+    font-size: 1.5rem;
+}
+
+h3,
+.h3,
+.heading-size-3 {
+    font-size: 1.3125rem;
+}
+
+h4,
+.h4,
+.heading-size-4 {
+    font-size: 1.25rem;
+    line-height: 1.4;
+}
+
+h5,
+.h5,
+.heading-size-5 {
+    font-size: 1.125rem;
+    line-height: 1.4;
+}
+
+h6,
+.h6,
+.heading-size-6 {
+    line-height: 1.4;
+}
+
+@media (max-width:767.98px) {
+    h1,
+    .h1,
+    .heading-size-1 {
+        font-size: 1.5rem;
+    }
+    h2,
+    .h2,
+    .heading-size-2 {
+        font-size: 1.25rem;
+    }
+    h3,
+    .h3,
+    .heading-size-3 {
+        font-size: 1.125rem;
+    }
+    h4,
+    .h4,
+    .heading-size-4 {
+        font-size: .9375rem;
+    }
+    h5,
+    .h5,
+    .heading-size-5 {
+        font-size: .9375rem
+    }
+    h6,
+    .h6,
+    .heading-size-6 {
+        font-size: .9375rem
+    }
+}
+
+@media (min-width:768px) and (max-width:991.98px) {
+    h1,
+    .h1,
+    .heading-size-1 {
+        font-size: 1.625rem
+    }
+    h2,
+    .h2,
+    .heading-size-2 {
+        font-size: 1.375rem;
+    }
+    h3,
+    .h3,
+    .heading-size-3 {
+        font-size: 1.125rem;
+    }
+    h4,
+    .h4,
+    .heading-size-4 {
+        font-size: 1rem;
+        line-height: 1.5
+    }
+    h5,
+    .h5,
+    .heading-size-5 {
+        font-size: 1rem
+    }
+    h6,
+    .h6,
+    .heading-size-6 {
+        font-size: 1rem
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    h1,
+    .h1,
+    .heading-size-1 {
+        font-size: 1.75rem
+    }
+    h2,
+    .h2,
+    .heading-size-2 {
+        font-size: 1.5rem
+    }
+    h3,
+    .h3,
+    .heading-size-3 {
+        font-size: 1.375rem
+    }
+    h4,
+    .h4,
+    .heading-size-4 {
+        font-size: 1.25rem
+    }
+    h5,
+    .h5,
+    .heading-size-5 {
+        font-size: 1.125rem
+    }
+    h6,
+    .h6,
+    .heading-size-6 {
+        font-size: 1rem
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {}
+
+.h4 .small,
+.h4 small,
+.h5 .small,
+.h5 small,
+.h6 .small,
+.h6 small,
+h4 .small,
+h4 small,
+h5 .small,
+h5 small,
+h6 .small,
+h6 small {
+    font-size: 85%
+}
+
+
+/* Inputs ------------------------------------ */
+
+fieldset {
+    min-width: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+legend {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    line-height: inherit;
+    color: inherit;
+    white-space: normal;
+}
+
+input,
+textarea,
+button,
+.button,
+.faux-button,
+.wp-block-button__link,
+.wp-block-file__button {
+    font-family: initial;
+    line-height: 1;
+}
+
+@supports (font-variation-settings: normal) {
+    input,
+    textarea,
+    button,
+    .button,
+    .faux-button,
+    .faux-button.more-link,
+    .wp-block-button__link,
+    .wp-block-file__button {
+        font-family: initial;
+    }
+}
+
+input,
+textarea {
+    border-color: var(--border-light);
+    color: var(--text-dark);
+}
+
+.nice-dark-mode input,
+.nice-dark-mode textarea textarea {
+    color: var(--night-text-dark);
+}
+
+code,
+input[type="url"],
+input[type="email"],
+input[type="tel"] {
+    /*rtl:ignore*/
+    direction: ltr;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="url"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: 0;
+}
+
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="week"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+textarea {
+    line-height: 1.5;
+    width: 100%;
+}
+
+input::-webkit-input-placeholder {
+    line-height: normal;
+}
+
+input:-ms-input-placeholder {
+    line-height: normal;
+}
+
+input::-moz-placeholder {
+    line-height: revert;
+    /* Reset to the value from the user-agent stylesheet. */
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+    display: none;
+}
+
+button,
+button:focus,
+button:hover,
+.button:focus,
+.button:hover {
+    -webkit-appearance: none;
+    outline: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+.faux-button,
+.wp-block-button__link,
+.wp-block-file .wp-block-file__button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    margin: 0;
+    opacity: 1;
+    text-decoration: none;
+    text-transform: uppercase;
+    -webkit-transition: opacity 0.15s linear;
+    -o-transition: opacity 0.15s linear;
+    transition: opacity 0.15s linear;
+}
+
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    -webkit-transition: all 0.15s linear;
+    -o-transition: all 0.15s linear;
+    transition: all 0.15s linear;
+}
+
+button:focus,
+button:hover,
+.button:focus,
+.button:hover,
+.faux-button:focus,
+.faux-button:hover,
+.wp-block-button .wp-block-button__link:focus,
+.wp-block-button .wp-block-button__link:hover,
+.wp-block-file .wp-block-file__button:focus,
+.wp-block-file .wp-block-file__button:hover,
+input[type="button"]:focus,
+input[type="button"]:hover,
+input[type="reset"]:focus,
+input[type="reset"]:hover,
+input[type="submit"]:focus,
+input[type="submit"]:hover {
+    text-decoration: none;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="range"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="time"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="color"]:focus,
+textarea:focus {
+    outline: 0;
+}
+
+select {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-transition: opacity 0.15s linear;
+    -o-transition: opacity 0.15s linear;
+    transition: opacity 0.15s linear;
+}
+
+textarea {
+    height: auto;
+    resize: none;
+}
+
+input[type=checkbox] {
+    -webkit-appearance: checkbox !important;
+}
+
+input[type=radio] {
+    -webkit-appearance: radio !important;
+}
+
+menu,
+ul,
+ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+caption {
+    color: inherit;
+}
+
+
+/* Lists ------------------------------------- */
+
+dt,
+dd {
+    line-height: 1.5;
+}
+
+dt {
+    font-weight: 500;
+}
+
+dt+dd {
+    margin-top: 0.5rem;
+}
+
+dd+dt {
+    margin-top: 1.5rem;
+}
+
+
+/* Quotes ------------------------------------ */
+
+blockquote {
+    color: inherit;
+}
+
+cite {
+    color: inherit;
+    font-size: 85%;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.25;
+}
+
+blockquote cite {
+    display: block;
+    margin: 2rem 0 0 0;
+}
+
+blockquote p,
+blockquote>p:last-child {
+    margin-bottom: 2rem;
+}
+
+blockquote p:last-child {
+    margin: 0;
+}
+
+blockquote em,
+blockquote i,
+blockquote cite {
+    font-style: normal;
+}
+
+
+/* Code -------------------------------------- */
+
+code,
+kbd,
+pre,
+samp {
+    font-size: inherit;
+}
+
+code,
+kbd,
+samp {
+    border-radius: var(--radius-xs);
+}
+
+pre {
+    white-space: pre;
+    overflow-x: auto;
+}
+
+
+/* Media ------------------------------------- */
+
+figure {
+    margin: 0;
+}
+
+video,
+iframe {
+    max-width: 100%;
+}
+
+svg,
+img,
+embed,
+object {
+    height: auto;
+    max-width: 100%;
+}
+
+figcaption a,
+.wp-caption-text a {
+    color: inherit;
+}
+
+
+/* GALLERIES */
+
+.gallery {
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin: 3em 0;
+    width: 100%;
+}
+
+.gallery-item {
+    margin: 0.8em 0;
+    padding: 0 0.8em;
+    width: 100%;
+}
+
+.gallery-caption {
+    display: block;
+    margin-top: 0.8em;
+}
+
+
+/*--------------------------------------------------------------
+/*	5. Size style
+--------------------------------------------------------------*/
+
+.w-8 {
+    width: 8px !important;
+    height: 8px !important
+}
+
+.w-12 {
+    width: 12px !important;
+    height: 12px !important
+}
+
+.w-16 {
+    width: 16px !important;
+    height: 16px !important
+}
+
+.w-20 {
+    width: 20px !important;
+    height: 20px !important;
+    font-size: 0.6em
+}
+
+.w-24 {
+    width: 24px !important;
+    height: 24px !important;
+    font-size: 0.7em
+}
+
+.w-28 {
+    width: 28px !important;
+    height: 28px !important;
+    font-size: 0.8em
+}
+
+.w-32 {
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 0.85em
+}
+
+.w-36 {
+    width: 36px !important;
+    height: 36px !important;
+    font-size: 0.875em
+}
+
+.w-40 {
+    width: 40px !important;
+    height: 40px !important
+}
+
+.w-48 {
+    width: 48px !important;
+    height: 48px !important
+}
+
+.w-56 {
+    width: 56px !important;
+    height: 56px !important
+}
+
+.w-64 {
+    width: 64px !important;
+    height: 64px !important
+}
+
+.w-72 {
+    width: 72px !important;
+    height: 72px !important
+}
+
+.w-80 {
+    width: 80px;
+    height: 80px
+}
+
+.w-96 {
+    width: 96px;
+    height: 96px
+}
+
+.w-128 {
+    width: 128px;
+    height: 128px;
+}
+
+.w-168 {
+    width: 168px;
+    height: 168px;
+}
+
+.w-192 {
+    width: 192px
+}
+
+.w-xs {
+    width: 90px
+}
+
+.w-auto {
+    width: auto
+}
+
+.h-auto {
+    height: auto
+}
+
+.hv {
+    height: 100vh
+}
+
+.h-v {
+    min-height: 100vh
+}
+
+.h-v-30 {
+    min-height: 30vh
+}
+
+.h-v-33 {
+    min-height: 33vh
+}
+
+.h-v-50 {
+    min-height: 50vh
+}
+
+.h-v-66 {
+    min-height: 66vh
+}
+
+.h-v-75 {
+    min-height: 75vh
+}
+
+@media (max-width:1199.98px) {
+    .w-auto-lg {
+        width: auto !important
+    }
+    .w-100-lg {
+        width: 100% !important
+    }
+}
+
+@media (max-width:991.98px) {
+    .w-auto-md {
+        width: auto !important
+    }
+    .w-100-md {
+        width: 100% !important
+    }
+}
+
+@media (max-width:767.98px) {
+    .w-auto-sm {
+        width: auto !important
+    }
+    .w-100-sm {
+        width: 100% !important
+    }
+}
+
+@media (max-width:575.98px) {
+    .w-auto-xs {
+        width: auto !important
+    }
+    .w-100-xs {
+        width: 100% !important
+    }
+}
+
+@media (min-width: 768px) {
+    .h-v-25 {
+        min-height: 25vh
+    }
+}
+
+.overflow-y {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+
+/*--------------------------------------------------------------
+/*	7. title Font Size style
+--------------------------------------------------------------*/
+
+.text-xx {
+    font-size: 0.6875rem !important
+}
+
+.text-xs {
+    font-size: 0.75rem !important
+}
+
+.text-sm {
+    font-size: 0.875rem !important
+}
+
+.text-md {
+    font-size: 1rem !important
+}
+
+.text-lg {
+    font-size: 1.125rem !important
+}
+
+.text-xl {
+    font-size: 1.625rem !important
+}
+
+.text-xxl {
+    font-size: 2.625rem !important
+}
+
+.text-40 {
+    font-size: 2.5rem !important
+}
+
+.text-50 {
+    font-size: 3.125rem !important
+}
+
+.text-64 {
+    font-size: 4rem !important
+}
+
+@media (max-width:767.98px) {
+    .text-xl {
+        font-size: 1.5rem !important
+    }
+    .text-lg {
+        font-size: 1.125rem !important
+    }
+    .text-md {
+        font-size: 1rem !important
+    }
+    .text-sm {
+        font-size: 0.8125rem !important
+    }
+    .text-xs {
+        font-size: 0.6875rem !important
+    }
+    .text-xx {
+        font-size: 0.625rem !important
+    }
+}
+
+@media (min-width:768px) and (max-width:991.98px) {
+    .text-xl {
+        font-size: 1.5rem !important
+    }
+    .text-lg {
+        font-size: 1.0625rem !important
+    }
+    .text-md {
+        font-size: 1rem !important
+    }
+    .text-sm {
+        font-size: 0.8125rem !important
+    }
+    .text-xx {
+        font-size: 0.6875rem !important
+    }
+}
+
+
+/*--------------------------------------------------------------
+/*	8. title Font Size style
+--------------------------------------------------------------*/
+
+.text-height-xs {
+    line-height: 1 !important
+}
+
+.text-height-sm {
+    line-height: 1.2 !important
+}
+
+.text-height-md {
+    line-height: 1.75 !important
+}
+
+.text-height-lg {
+    line-height: 1.85 !important
+}
+
+.text-height-xl {
+    line-height: 2 !important
+}
+
+
+/* text space style ----------------------------- */
+
+.text-space-md {
+    letter-spacing: 5px;
+}
+
+.text-space-lg {
+    letter-spacing: 15px;
+}
+
+
+/* Icon style ----------------------------- */
+
+.iconfont {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+}
+
+.text-sm .iconfont.text-md,
+.text-xs .iconfont.text-md,
+.text-xs .iconfont.text-sm,
+.text-xx .iconfont.text-sm {
+    position: relative;
+    top: -1px
+}
